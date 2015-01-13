@@ -1,0 +1,8 @@
+smspath=./smspath #短信所在路径
+resultpath=./result #结果存储路径
+backpath=./back #备份路径
+keyfile=keyword.txt #关键词文件名
+cycle = 5 #循环间隔，单位分钟
+delcycle = 10 #运行多少轮之后删除备份文件夹下备份过的文件,单位为轮
+colsplit=| #输入文件的列分隔符
+datafile=./flg #数据文件所在路径
