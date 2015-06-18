@@ -23,7 +23,8 @@ void splitStr2Strs(string &str, const char *delimiter, vector<string> &res)
         last_found = found+1;
         found = str.find(delimiter,last_found);
     }
-    res.push_back(str.substr(last_found));
+    size_t n = str.size() - 1;
+    res.push_back(str.substr(last_found, n - last_found));
 }
 
 bool RFile::Init(const std::string& RowSplit1,const std::string& ColSplit1,const std::string& RFileName1)
