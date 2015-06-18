@@ -6,6 +6,7 @@
 # include "config.h"
 # include "RFile.h"
 # include "BacDel.h"
+# include <string.h>
 
 # include <iostream>
 # include <fstream>
@@ -264,6 +265,5 @@ int main()
 			delnum = 0;
 		}
 	}
-	system("pause");
 	return 0;
 }

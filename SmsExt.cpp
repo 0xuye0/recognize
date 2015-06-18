@@ -1,4 +1,5 @@
 #include "SmsExt.h"
+#include <cmath>
 
 //数据库交互版的构造函数
 SmsClassifyExtraction::SmsClassifyExtraction()

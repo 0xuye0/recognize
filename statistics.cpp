@@ -1,5 +1,6 @@
 # include "statistics.h"
 # include "result.h"
+# include <stdlib.h>
 
 using namespace std;
 

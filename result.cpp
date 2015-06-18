@@ -1,6 +1,7 @@
 #include "result.h"
 #include <math.h>
 #include <iomanip>
+#include <stdlib.h>
 
 void result::clear()
 {
