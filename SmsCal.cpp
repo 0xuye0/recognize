@@ -1,5 +1,6 @@
+#include <cstdlib>
 #include "SmsCal.h"
-#include <sstream> 
+#include <sstream>
 #include <cmath>
 
 

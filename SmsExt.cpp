@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "SmsExt.h"
 #include <cmath>
 
