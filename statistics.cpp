@@ -2,6 +2,9 @@
 # include "result.h"
 # include <stdlib.h>
 
+
+#include <iostream>
+
 using namespace std;
 
 extern string origin_position;
@@ -63,62 +66,40 @@ void StatisChar_Identify::preparation()
 	}
 	file2.close();
 		// 分布特征载入
-	string temp_merge2 = origin_position + "StaResult.txt";
-	const char* statistic_file_path = &temp_merge2[0];
-	fstream file3(statistic_file_path, ios::in);
-	if ( !file3.is_open() )
-	{
-		throw 3;
-	}
-	//file3.open(statistic_file_path);
 			// 根据文件格式提取
 	double score =0.0;
 	string string_temp = "";
-	getline( file3,string_temp );// 读取
-	// A类 
+	// A类
 			// 英文符号`
-	//getline( file3, string_temp);
-    statistic_score_set(string_temp.substr(5,6),A.En_ratio);
+	string_temp = "0.044415";
+    statistic_score_set(string_temp, A.En_ratio);
 			// 数字符号
-	//getline( file3, string_temp);
-	statistic_score_set(string_temp.substr(12,6),A.Num_ratio);
+	string_temp = "0.017478";
+	statistic_score_set(string_temp, A.Num_ratio);
 			// 标点符号
-	//getline( file3, string_temp);
-	statistic_score_set(string_temp.substr(19,6),A.Punc_ratio);
+	string_temp = "0.090243";
+	statistic_score_set(string_temp, A.Punc_ratio);
 			// 垃圾符号
-	//getline( file3, string_temp);
-	statistic_score_set(string_temp.substr(26,6),A.Junk_ratio);
+	string_temp = "0.07326";
+	statistic_score_set(string_temp, A.Junk_ratio);
 
-	getline(file3,string_temp);
 	// B类
 			// 英文符号
-	//getline( file3, string_temp);
-	//cout<<string_temp<<endl;
-	//cout<<string_temp.substr(5,6)<<endl;
-
-	statistic_score_set(string_temp.substr(5,6),B.En_ratio);
+	string_temp = "0.019205";
+	statistic_score_set(string_temp, B.En_ratio);
 			// 数字符号
-	//getline( file3, string_temp);
-	statistic_score_set(string_temp.substr(12,6),B.Num_ratio);
+	string_temp = "0.08292";
+	statistic_score_set(string_temp, B.Num_ratio);
 			// 标点符号
-	//getline( file3, string_temp);
-	statistic_score_set(string_temp.substr(19,6),B.Punc_ratio);
+	string_temp = "0.071412";
+	statistic_score_set(string_temp, B.Punc_ratio);
 			// 垃圾符号
-	//getline( file3, string_temp);
-	statistic_score_set(string_temp.substr(26,6),B.Junk_ratio);
+	string_temp = "0.068129";
+	statistic_score_set(string_temp, B.Junk_ratio);
 
-	file3.close();
 		// 敏感字门限
-	string temp_merge3 = origin_position + "SentiveWords_threshold.txt";
-	const char* sentiveWords_threshold_file_path = &temp_merge3[0];
-	fstream file4(sentiveWords_threshold_file_path, ios::in);
-	if ( !file4.is_open() )
-	{
-		throw 4;
-	}
-	getline( file4,string_temp);
+	string_temp = "2.5617";
 	threshold_set(string_temp);
-	file4.close();
 
 }
 // 特征提取函数：两类功能都会调用

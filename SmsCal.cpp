@@ -294,33 +294,8 @@ float SmsClassifyCalculate::KeyScoreCal()
 //并得到分类标签结果
 int SmsClassifyCalculate::TypeJudge()
 {
-
-	string temp_merge0 = origin_position + "JudgeValue.txt";
-	const char* file_name = &temp_merge0[0];
-	ifstream inJudgeValue;
-	inJudgeValue.open(file_name);
-	if(!inJudgeValue)
-	{
-		//std::cout<<"test.txt file not found"<<std::endl;
-		throw 5;
-	}
-	else{
-	std::string line("");
-	getline(inJudgeValue,line);
-		if(line.length() == 0 )
-		{
-			throw 5;
-		}
-		else{
-			std::stringstream ss;
-			ss<<line;
-
 	float clsScoreTemp=KeyScoreCal();
-	float clsScoreMax;
-	ss>>clsScoreMax;
-	if(clsScoreMax>0)
-	{
-	//float clsScoreMid=clsScoreMax/4;
+	float clsScoreMax = 0.66;
 	if(clsScoreTemp<clsScoreMax)
 	{
 		ResultType.ScoreFinal=clsScoreTemp;
@@ -332,12 +307,6 @@ int SmsClassifyCalculate::TypeJudge()
         ResultType.type=2;
 	}
 	return ResultType.type;
-		}
-	else throw 5;
-		}
-		
-	}
-	
 }
 
 //测试输出
